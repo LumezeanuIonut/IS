@@ -1,0 +1,33 @@
+# Claude
+.claude/
+
+# Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Secrets
+src/main/resources/application.yml
+
+# Logs
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Node
+frontend/node_modules/
+frontend/dist/
+scripts/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

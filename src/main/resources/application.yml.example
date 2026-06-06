@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: sch-backend
+
+  datasource:
+    url: "jdbc:sqlserver://YOUR_SERVER.database.windows.net:1433;database=YOUR_DB;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
+    username: "YOUR_DB_USER"
+    password: "YOUR_DB_PASSWORD"
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
+app:
+  jwt:
+    secret: "YOUR_BASE64_SECRET_MIN_32_BYTES"
+    expiration-ms: 86400000   # 24 ore
+
+logging:
+  level:
+    com.sch.backend: DEBUG
+    org.springframework.security: INFO
