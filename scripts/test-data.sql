@@ -5,6 +5,10 @@
 
 SET NOCOUNT ON;
 
+-- Elimină coloana 'username' dacă există din schema veche
+IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'utilizatori' AND COLUMN_NAME = 'username')
+    ALTER TABLE utilizatori DROP COLUMN username;
+
 -- 1. Utilizatori
 DELETE FROM alarme;
 DELETE FROM masuratori;
