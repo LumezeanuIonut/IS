@@ -25,6 +25,7 @@ src/main/resources/application.yml
 
 # Node
 frontend/node_modules/
+frontend/.npm-cache/
 frontend/dist/
 scripts/node_modules/
 
